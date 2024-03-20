@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.kotlinKapt)
 }
 
 android {
@@ -59,6 +60,29 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.retrofit.converter.guava)
+    implementation(libs.retrofit.converter.jackson)
+    implementation(libs.retrofit.converter.jaxb)
+    implementation(libs.retrofit.converter.kotlinxSerialization)
+    implementation(libs.retrofit.converter.moshi)
+//    implementation(libs.retrofit.converter.protobuf)
+    implementation(libs.retrofit.converter.scalars)
+    implementation(libs.retrofit.converter.wire)
+    implementation(libs.retrofit.adapter.guava)
+    implementation(libs.retrofit.adapter.rxjava2)
+    implementation(libs.retrofit.adapter.rxjava3)
+    implementation(libs.retrofit.mock)
+
+    //LifeCycle dependency
+    implementation(libs.androidx.lifecycle.viewModelCompose)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
